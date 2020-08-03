@@ -1,0 +1,414 @@
+/* 
+
+
+.container {
+  border: 1px solid red;
+  width: 1000px;
+  margin: 0 auto;
+
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+
+
+  ó tambien se las podemos poner *manualmente:
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+
+  y si las quitamos del header, sigue funcionando si las ponemos 
+  *manualmente y NO por herencia
+}
+
+.hero{
+  Creo que ya no se va a utilizar
+  background-image: url('hero.jpg');
+  background-size: 500px 300px;
+  background-repeat: no-repeat;
+  background-position-x: right;  
+}
+
+agregamos 
+.hero{
+  justify-content: space-between;
+}
+
+
+.hero-image {
+  object-fit: cover;
+}
+
+Se agraga
+.event-list {
+  flex-wrap: wrap;
+}
+
+
+
+
+*/
+
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1b2127;
+  color: white;
+  height: 70px;
+}
+
+.header a { /* Dentro de header, ponle a las "a" esta condicion, sin la comas es dentro de, con la coma es a todos los que se vayan nombrando */
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none; /*SIN decoracion*/
+  height: inherit;
+  padding: 0 10px; 
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  height: 300px;
+  background-color: #1b2127;
+  /* background-image: url('./imagenes/hero.jpg');
+  background-size: 500px 300px;
+  background-repeat: no-repeat;
+  background-position-x: right;*/
+  justify-content: space-between;
+}
+
+.hero-image {
+  object-fit: cover;
+}
+
+h1{
+  font-size: 40px;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  color: white;
+  margin: 0;
+}
+
+h1 strong{
+  color: #026fff;
+}
+
+h2 {
+  color: #026fff;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.portfolio{
+  background: #cdcdcd; /*Aqui va --> #fafafa*/
+  padding: 20px;
+}
+
+h1,
+h2,   /* Sin la coma, estariamos haciendo un selector descendente, estaria buscando dentro*/
+h3,     /*de h1 a h2 y h2 a h3 y asi hasta llegar a h6 y a ese se le asigna la propiedad */  
+h4,       /*En este caso a todos les asigna la declaracion*/
+h5,
+h6{
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal; /*normal equivale a 400*/
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid gray; 
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 20px; /*Margen hacia adentro*/
+  background: white; 
+}
+
+.project-course, 
+.project-date, 
+.project-url {
+  margin: 10px 0;
+}
+
+.project-description {
+  font-size: 20px;
+}
+
+.project strong {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+/* .project-date {  Puede que la usemos en otro momento
+  margin: 10px 0;
+} */
+
+.project-title {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project-details {
+  /* border: 1px solid red; */
+  border-left-color: #026fff;
+  border-left-style: solid;
+  border-left-width: 5px;
+  
+  border-top-color: #026fff;
+  border-top-style: solid;
+  border-top-width: 5px;
+
+  border-bottom-color: #026fff;
+  border-bottom-style: dashed;
+  border-bottom-width: 5px;
+
+
+  width: 500px;
+  height: 300px;
+
+}
+
+.project-imageContainer {
+  /* border: 1px solid red; */
+
+  border-right-color: #026fff;
+  border-right-style: solid;
+  border-right-width: 5px;
+  
+  border-bottom-color: #026fff;
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+
+  border-top-color: #026fff;
+  border-top-style: dashed;
+  border-top-width: 5px;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 300px;
+}
+
+.project-image {
+  width: 250px;
+  height: 270px;
+  border: 1px solid green;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+figure {
+  margin: 0;
+}
+
+.header ol {
+  display: flex;
+  height: inherit;
+}
+
+/* Después vamos a ir heredando la altura del header por medio de la 
+propiedad height con valor inherit de forma descendente, pasando por 
+cada elemento hijo hasta llega al selector del anchor <a>. 
+Son 4:
+*/
+
+/* 1 */
+.menu { /* .menu hereda de .header */
+  height: inherit;
+}
+
+/* 2 */
+/* .header ol { .header ol hereda de .menu ---------------->Ya declaramos (.header ol)
+  display: flex;
+  height: inherit;
+} */
+
+/* 3 */
+.header ol li { /* .header ol li hereda de .header ol */
+  height: inherit;
+}
+
+/* 4 */
+/* .header a { .header a hereda de .header ol li ----------->Ya declaramos (.header a)
+  color: white;
+  text-decoration: none;
+  height: inherit;
+} */
+
+
+.footer {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; /*Como no se alinea correctamente le pondremos otra condicion a parte */
+  background-color: #1b2127;
+  color: white;
+}
+
+.footer img {
+  vertical-align: middle; /*Condicion a parte*/
+}
+
+.footer a {
+  color: white;
+}
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+
+.event-list
+.container {
+  /* border: 1px solid red; */
+  border-left-style: solid;
+  border-left-width: 10px;
+  border-left-color: #026fff;
+}
+
+.event-list-title {
+  margin-left: 20px; 
+}
+
+.event {
+  margin: 10px;
+  width: 480px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  /* background: #cdcdcd; Aqui va #f4fbff */
+  /* border: 1px solid red; */
+}
+
+.event img {
+  width: 480px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-detail {
+  margin: 20px 40px;
+  margin-top: -40px; /*Hacemos el contenido hacia arriba*/
+  position: relative;
+  padding: 20px;
+  background-color: white;
+  text-align: center; /*Centrar texto, tambie esta justify-content, pero ese NO hay que usarlo.*/
+}
+
+.event-description {
+  text-align: left;
+}
+
+.event-url {
+  color: white; /*Por defecto el borde tendra el mismo color*/
+  border: 1px solid; /*Por defecto el borde asimila el color del borde del color del texto*/ 
+  padding: 5px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  background: #ff0080;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 150px;
+  background-color: #056fff;
+  color: white;
+}
+
+/* .social {
+  border: 1px solid red;
+} */
+
+.social-link {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: 50px 50px;
+  margin: 0 10px;
+  /* border: 1px solid white; */
+}
+
+.social-link.twitter {
+  background-image: url('./imagenes/twitter.svg');
+}
+
+.social-link.facebook {
+  background-image: url('./imagenes/facebook.svg');
+}
+
+.social-link.github {
+  background-image: url('./imagenes/github.svg');
+}
+
+.social-link.instagram {
+  background-image: url('./imagenes/instagram.svg');
+}
+
+.form-email input {
+  border-color: gray;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px 20px 10px 25px;
+  background-image: url('./imagenes/envelope.svg');
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position-y: center; 
+  background-position-x: 5px; 
+}
+
+.form-email button {
+  display: block; /*Para que es ponga en la parte de abajo del formulario*/
+  background: transparent;
+  color: white;
+  padding: 10px 0;
+  border-radius: 5px;
+  width: 100px;
+  margin-top: 10px;
+  border-color: white;
+}
+
+.form-email h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+  /* border: 1px solid red; */
+  width: 1000px;
+  margin: 0 auto;
+
+  /*Tambien funciona si se las ponemos manualmente y las 
+  podemos borrar del header*/
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+h1 {
+  text-shadow: 0px 10px 10px cyan;
+}

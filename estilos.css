@@ -210,8 +210,8 @@ h6{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%px;
-  /* height: 300px; */
+  width: 50%;
+  height: 368px;
 }
 
 /* .project-image {
@@ -221,7 +221,7 @@ h6{
 } */
 
 .project-imageContainer img {
-  max-width: 100%;
+  max-width: 80%;
 }
 
 ol,
@@ -529,6 +529,10 @@ h1 {
   img.hero-image {
     max-width: 100%;
   }
+
+  .project-imageContainer img {
+    max-width: 60%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -566,6 +570,15 @@ h1 {
   img.hero-image {
     height: 50%;
   }
+
+  .project-imageContainer {
+    height: auto;
+  }
+
+  .project-imageContainer img {
+    max-width: 50%;
+    padding: 10px 0;
+}
 }
 
 @media screen and (max-width: 320px) {

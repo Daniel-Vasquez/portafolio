@@ -116,6 +116,7 @@ h2 {
   font-weight: bold;
   font-size: 24px;
   margin-bottom: 40px;
+  margin: 5px 0;
 }
 
 .portfolio{
@@ -513,6 +514,21 @@ h1 {
     height: 40px;
     margin: 5px;
   }
+
+  .hero {
+    display: block;
+    text-align: center;
+    height: auto;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+    padding: 10px 0;
+  }
+
+  img.hero-image {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -546,8 +562,15 @@ h1 {
     text-align: center;
     border: 1px solid transparent;
   }
+
+  img.hero-image {
+    height: 50%;
+  }
 }
 
 @media screen and (max-width: 320px) {
-  
+  .hero h1 {
+    font-size: 1em;
+  }
+
 }

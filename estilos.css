@@ -87,8 +87,14 @@ body {
   justify-content: space-between;
 }
 
-.hero-image {
+/* .hero-image {
   object-fit: cover;
+} */
+
+figure.logo img{
+  width: 125px;
+  object-fit: cover;
+  height: 50px;
 }
 
 h1{
@@ -172,13 +178,15 @@ h6{
   border-top-style: solid;
   border-top-width: 5px;
 
-  border-bottom-color: #026fff;
+  /* border-bottom-color: #026fff;
   border-bottom-style: dashed;
-  border-bottom-width: 5px;
+  border-bottom-width: 5px; */
 
+  padding: 5px;
+  width: 50%;
+  height: 374px;
+  height: 368px;
 
-  width: 500px;
-  height: 300px;
 
 }
 
@@ -193,22 +201,26 @@ h6{
   border-bottom-style: solid;
   border-bottom-width: 5px;
 
-  border-top-color: #026fff;
+  /* border-top-color: #026fff;
   border-top-style: dashed;
-  border-top-width: 5px;
+  border-top-width: 5px; */
 
 
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 450px;
-  height: 300px;
+  width: 50%px;
+  /* height: 300px; */
 }
 
-.project-image {
+/* .project-image {
   width: 250px;
   height: 270px;
   border: 1px solid green;
+} */
+
+.project-imageContainer img {
+  max-width: 100%;
 }
 
 ol,
@@ -397,7 +409,8 @@ Son 4:
 
 .container {
   /* border: 1px solid red; */
-  width: 1000px;
+  max-width: 1000px;
+  flex: 1;
   margin: 0 auto;
 
   /*Tambien funciona si se las ponemos manualmente y las 
@@ -411,4 +424,130 @@ Son 4:
 
 h1 {
   text-shadow: 0px 10px 10px cyan;
+}
+
+/*------------------------ Desktop First que empieces desde el Media Queties mas grande ------------------------*/
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 0.4em; /*En el curso es; 0 1em, pero un icono de contact (class = "social") cae y se ve feo*/
+  }
+}
+
+@media screen and (max-width: 767px) { /*767 porque en 768 todavia se alcanza ver bien el websit*/ 
+  .header {
+    display: block;
+    height: auto;
+  } 
+
+  .header .logo {
+    text-align: center;
+  }
+  
+  .header ol {
+    display: block; /*Ó display: initial;*/
+  }
+
+  .header ol li {
+    height: 50px;
+  }
+
+  .header a {
+    justify-content: center;
+  }
+
+  .project {
+    display: block;
+  }
+
+  .project-imageContainer {
+    width: auto;
+    text-align: center;
+    border-top-style: none;
+  }
+
+  .project-details {
+    width: auto;
+    height: auto;
+    border-bottom-style: none;
+    /* font-size: 16px; */
+  }
+
+  .project-course, .project-date, .project-url {
+    margin: 0.3em 0;
+  }
+
+  .project-title {
+    font-size: 1.5em;
+    margin-bottom: 0.3em;
+  }
+
+  .project-url {
+    font-size: 1em;
+  }
+
+  .project-course {
+    font-size: 0.8em;
+  }
+
+  .project-date {
+    font-size: 1em;
+  }
+
+  .project-description {
+    font-size: 0.8em;
+  } 
+
+  .event {
+    width: auto;
+    flex-shrink: initial; /*Lo reseteamos ya que era 0 en el CSS normal*/
+  }
+
+  .event img {
+    width: 100%;
+    object-position: 0% 30%; /*Lo puse de los comentarios, No del curso, ajusta la imagen de Eventos, para que se vea más el rostro */
+  }
+
+  figure.logo img {
+    width: 100px;
+    height: 40px;
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .project-details {
+    font-size: 12px;
+  }
+
+  .event-detail {
+    /* 1em = 16px */
+    margin: -2em 0.5em 0.5em;
+    padding: 1em;
+  }
+
+  .contact {
+    height: auto;
+    padding: 1em 0.5em;
+    text-align: center;
+    display: block;
+  }
+
+  .form-email button {
+    margin: 1em auto;
+  }
+
+  .form-email h3 {
+    margin-top: 0;
+  }
+
+  .footer {
+    display: block;
+    text-align: center;
+    border: 1px solid transparent;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  
 }

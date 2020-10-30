@@ -1,59 +1,5 @@
-/* 
-
-
-.container {
-  border: 1px solid red;
-  width: 1000px;
-  margin: 0 auto;
-
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  height: inherit;
-  flex-wrap: inherit;
-
-
-  ó tambien se las podemos poner *manualmente:
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-
-  y si las quitamos del header, sigue funcionando si las ponemos 
-  *manualmente y NO por herencia
-}
-
-.hero{
-  Creo que ya no se va a utilizar
-  background-image: url('hero.jpg');
-  background-size: 500px 300px;
-  background-repeat: no-repeat;
-  background-position-x: right;  
-}
-
-agregamos 
-.hero{
-  justify-content: space-between;
-}
-
-
-.hero-image {
-  object-fit: cover;
-}
-
-Se agraga
-.event-list {
-  flex-wrap: wrap;
-}
-
-
-
-
-*/
-
-
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   margin: 0;
 }
 
@@ -66,13 +12,13 @@ body {
   height: 70px;
 }
 
-.header a { /* Dentro de header, ponle a las "a" esta condicion, sin la comas es dentro de, con la coma es a todos los que se vayan nombrando */
+.header a {
   display: flex;
   align-items: center;
   color: white;
-  text-decoration: none; /*SIN decoracion*/
+  text-decoration: none;
   height: inherit;
-  padding: 0 10px; 
+  padding: 0 10px;
 }
 
 .hero {
@@ -80,24 +26,16 @@ body {
   align-items: center;
   height: 300px;
   background-color: #1b2127;
-  /* background-image: url('./imagenes/hero.jpg');
-  background-size: 500px 300px;
-  background-repeat: no-repeat;
-  background-position-x: right;*/
   justify-content: space-between;
 }
 
-/* .hero-image {
-  object-fit: cover;
-} */
-
-figure.logo img{
+figure.logo img {
   width: 125px;
   object-fit: cover;
   height: 50px;
 }
 
-h1{
+h1 {
   font-size: 40px;
   line-height: 1.5;
   letter-spacing: -0.2px;
@@ -105,32 +43,32 @@ h1{
   margin: 0;
 }
 
-h1 strong{
+h1 strong {
   color: #026fff;
 }
 
 h2 {
   color: #026fff;
   text-transform: uppercase;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
   font-size: 24px;
   margin-bottom: 40px;
   margin: 5px 0;
 }
 
-.portfolio{
-  background: #cdcdcd; /*Aqui va --> #fafafa*/
+.portfolio {
+  background: #cdcdcd;
   padding: 20px;
 }
 
 h1,
-h2,   /* Sin la coma, estariamos haciendo un selector descendente, estaria buscando dentro*/
-h3,     /*de h1 a h2 y h2 a h3 y asi hasta llegar a h6 y a ese se le asigna la propiedad */  
-h4,       /*En este caso a todos les asigna la declaracion*/
+h2,
+h3,
+h4,
 h5,
-h6{
-  font-family: 'Fjalla One', sans-serif;
+h6 {
+  font-family: "Fjalla One", sans-serif;
   font-weight: normal; /*normal equivale a 400*/
 }
 
@@ -138,15 +76,15 @@ h6{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid gray; 
+  border: 1px solid gray;
   border-radius: 10px;
   margin-bottom: 15px;
-  padding: 20px; /*Margen hacia adentro*/
-  background: white; 
+  padding: 20px;
+  background: white;
 }
 
-.project-course, 
-.project-date, 
+.project-course,
+.project-date,
 .project-url {
   margin: 10px 0;
 }
@@ -156,12 +94,8 @@ h6{
 }
 
 .project strong {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: "Fjalla One", sans-serif;
 }
-
-/* .project-date {  Puede que la usemos en otro momento
-  margin: 10px 0;
-} */
 
 .project-title {
   font-size: 30px;
@@ -170,55 +104,31 @@ h6{
 }
 
 .project-details {
-  /* border: 1px solid red; */
   border-left-color: #026fff;
   border-left-style: solid;
   border-left-width: 5px;
-  
   border-top-color: #026fff;
   border-top-style: solid;
   border-top-width: 5px;
-
-  /* border-bottom-color: #026fff;
-  border-bottom-style: dashed;
-  border-bottom-width: 5px; */
-
   padding: 5px;
   width: 50%;
   height: 374px;
   height: 368px;
-
-
 }
 
 .project-imageContainer {
-  /* border: 1px solid red; */
-
   border-right-color: #026fff;
   border-right-style: solid;
   border-right-width: 5px;
-  
   border-bottom-color: #026fff;
   border-bottom-style: solid;
   border-bottom-width: 5px;
-
-  /* border-top-color: #026fff;
-  border-top-style: dashed;
-  border-top-width: 5px; */
-
-
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
   height: 368px;
 }
-
-/* .project-image {
-  width: 250px;
-  height: 270px;
-  border: 1px solid green;
-} */
 
 .project-imageContainer img {
   max-width: 80%;
@@ -240,46 +150,24 @@ figure {
   height: inherit;
 }
 
-/* Después vamos a ir heredando la altura del header por medio de la 
-propiedad height con valor inherit de forma descendente, pasando por 
-cada elemento hijo hasta llega al selector del anchor <a>. 
-Son 4:
-*/
-
-/* 1 */
-.menu { /* .menu hereda de .header */
+.menu {
   height: inherit;
 }
 
-/* 2 */
-/* .header ol { .header ol hereda de .menu ---------------->Ya declaramos (.header ol)
-  display: flex;
-  height: inherit;
-} */
-
-/* 3 */
-.header ol li { /* .header ol li hereda de .header ol */
+.header ol li {
   height: inherit;
 }
-
-/* 4 */
-/* .header a { .header a hereda de .header ol li ----------->Ya declaramos (.header a)
-  color: white;
-  text-decoration: none;
-  height: inherit;
-} */
-
 
 .footer {
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; /*Como no se alinea correctamente le pondremos otra condicion a parte */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #1b2127;
   color: white;
 }
 
 .footer img {
-  vertical-align: middle; /*Condicion a parte*/
+  vertical-align: middle;
 }
 
 .footer a {
@@ -289,20 +177,16 @@ Son 4:
 .event-list {
   display: flex;
   flex-wrap: wrap;
-  
 }
 
-
-.event-list
-.container {
-  /* border: 1px solid red; */
+.event-list .container {
   border-left-style: solid;
   border-left-width: 10px;
   border-left-color: #026fff;
 }
 
 .event-list-title {
-  margin-left: 20px; 
+  margin-left: 20px;
 }
 
 .event {
@@ -311,8 +195,6 @@ Son 4:
   border-radius: 10px;
   overflow: hidden;
   flex-shrink: 0;
-  /* background: #cdcdcd; Aqui va #f4fbff */
-  /* border: 1px solid red; */
 }
 
 .event img {
@@ -323,11 +205,11 @@ Son 4:
 
 .event-detail {
   margin: 20px 40px;
-  margin-top: -40px; /*Hacemos el contenido hacia arriba*/
+  margin-top: -40px;
   position: relative;
   padding: 20px;
   background-color: white;
-  text-align: center; /*Centrar texto, tambie esta justify-content, pero ese NO hay que usarlo.*/
+  text-align: center;
 }
 
 .event-description {
@@ -335,8 +217,8 @@ Son 4:
 }
 
 .event-url {
-  color: white; /*Por defecto el borde tendra el mismo color*/
-  border: 1px solid; /*Por defecto el borde asimila el color del borde del color del texto*/ 
+  color: white;
+  border: 1px solid;
   padding: 5px 20px;
   text-decoration: none;
   border-radius: 5px;
@@ -352,33 +234,28 @@ Son 4:
   color: white;
 }
 
-/* .social {
-  border: 1px solid red;
-} */
-
 .social-link {
   display: inline-block;
   width: 50px;
   height: 50px;
   background-size: 50px 50px;
   margin: 0 10px;
-  /* border: 1px solid white; */
 }
 
 .social-link.twitter {
-  background-image: url('./imagenes/twitter.svg');
+  background-image: url("./imagenes/twitter.svg");
 }
 
 .social-link.facebook {
-  background-image: url('./imagenes/facebook.svg');
+  background-image: url("./imagenes/facebook.svg");
 }
 
 .social-link.github {
-  background-image: url('./imagenes/github.svg');
+  background-image: url("./imagenes/github.svg");
 }
 
 .social-link.instagram {
-  background-image: url('./imagenes/instagram.svg');
+  background-image: url("./imagenes/instagram.svg");
 }
 
 .form-email input {
@@ -386,15 +263,15 @@ Son 4:
   border-style: solid;
   border-radius: 5px;
   padding: 10px 20px 10px 25px;
-  background-image: url('./imagenes/envelope.svg');
+  background-image: url("./imagenes/envelope.svg");
   background-size: 15px 15px;
   background-repeat: no-repeat;
-  background-position-y: center; 
-  background-position-x: 5px; 
+  background-position-y: center;
+  background-position-x: 5px;
 }
 
 .form-email button {
-  display: block; /*Para que es ponga en la parte de abajo del formulario*/
+  display: block;
   background: transparent;
   color: white;
   padding: 10px 0;
@@ -405,17 +282,13 @@ Son 4:
 }
 
 .form-email h3 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .container {
-  /* border: 1px solid red; */
   max-width: 1000px;
   flex: 1;
   margin: 0 auto;
-
-  /*Tambien funciona si se las ponemos manualmente y las 
-  podemos borrar del header*/
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
@@ -431,22 +304,35 @@ h1 {
 
 @media screen and (max-width: 1024px) {
   .container {
-    padding: 0 0.4em; /*En el curso es; 0 1em, pero un icono de contact (class = "social") cae y se ve feo*/
+    padding: 0 0.4em;
   }
 }
 
-@media screen and (max-width: 767px) { /*767 porque en 768 todavia se alcanza ver bien el websit*/ 
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .event {
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 842px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .header {
     display: block;
     height: auto;
-  } 
+  }
 
   .header .logo {
     text-align: center;
   }
-  
+
   .header ol {
-    display: block; /*Ó display: initial;*/
+    display: block;
   }
 
   .header ol li {
@@ -471,10 +357,11 @@ h1 {
     width: auto;
     height: auto;
     border-bottom-style: none;
-    /* font-size: 16px; */
   }
 
-  .project-course, .project-date, .project-url {
+  .project-course,
+  .project-date,
+  .project-url {
     margin: 0.3em 0;
   }
 
@@ -497,16 +384,18 @@ h1 {
 
   .project-description {
     font-size: 0.8em;
-  } 
+  }
 
   .event {
-    width: auto;
-    flex-shrink: initial; /*Lo reseteamos ya que era 0 en el CSS normal*/
+    width: 80%;
+    flex-shrink: initial;
+    margin: 0 auto;
+    padding-bottom: 10px;
   }
 
   .event img {
     width: 100%;
-    object-position: 0% 30%; /*Lo puse de los comentarios, No del curso, ajusta la imagen de Eventos, para que se vea más el rostro */
+    object-position: 0% 30%;
   }
 
   figure.logo img {
@@ -541,7 +430,6 @@ h1 {
   }
 
   .event-detail {
-    /* 1em = 16px */
     margin: -2em 0.5em 0.5em;
     padding: 1em;
   }
@@ -578,7 +466,7 @@ h1 {
   .project-imageContainer img {
     max-width: 50%;
     padding: 10px 0;
-}
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -586,4 +474,8 @@ h1 {
     font-size: 1em;
   }
 
+  .event {
+    width: auto;
+    margin: 10px;
+  }
 }
